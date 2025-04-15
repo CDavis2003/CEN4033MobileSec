@@ -1,1 +1,1 @@
-Created project template using django-admin startproject command.
+used djangoadmin startapp to create some of the file structure for some app modules, attempted some html with css unsucessfully.

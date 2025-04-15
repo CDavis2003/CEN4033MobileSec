@@ -1,0 +1,26 @@
+<!--Template or layout for every page of our game-->
+<!DOCTYPE html>
+{% csrf_token %}
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mobile Security Awareness Game</title>
+        <link href="{% static 'css/global.css' %}" rel="stylesheet">
+        {% block extra_css %}{% endblock %}
+    </head>
+    <body>
+        <header class="title-bar">
+            <div class="logo">Mobile Security</div>
+            <nav class="nav-links">
+<!--                <a href="{% url 'game:create_game' %}">Play</a>-->
+<!--                <a href="{% url 'authentication:login' %}">Account</a>-->
+            </nav>
+        </header>
+
+        <main>
+            {% block content %}{% endblock %}
+        </main>
+    </body>
+</html>
