@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .models import * 
 from core.utils import generate_rsa_keypair
 from .forms import *
@@ -19,16 +19,21 @@ def register_page(request):
 
 def login_page(request):
     if request.method == "POST":
-        form = LoginForm(request.POST)
+        form = LoginForm(request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(request, username=username, password=password)
             if user:
+                print("✅ Login successful!")
                 login(request, user)
-                return render(request, 'accounts/success.html', {'user': user})
+                return redirect('home-page')
             else:
                 form.add_error(None, "Invalid credentials")
     else:
         form = LoginForm()
     return render(request, 'accounts/login.html', {'form': form})
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login-page')

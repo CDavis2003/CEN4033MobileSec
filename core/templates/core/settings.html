@@ -1,10 +1,12 @@
+{% load static %}
+{% csrf_token %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Settings | Security Awareness Game</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
 </head>
 <body>
 <nav>⚙️ Settings</nav>
@@ -20,7 +22,7 @@
     </select>
   </label>
   <div class="back-button">
-    <a href="home.html"><button>⬅ Back</button></a>
+    <a href="{% url 'home-page' %}"><button>⬅ Back</button></a>
   </div>
 </div>
 </body>
