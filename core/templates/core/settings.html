@@ -1,27 +1,26 @@
 {% load static %}
 {% csrf_token %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Leaderboard | Security Awareness Game</title>
+  <title>Settings | Security Awareness Game</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
 </head>
 <body>
-<nav>🏆 Leaderboard</nav>
+<nav>⚙️ Settings</nav>
 <div class="card">
-  <h2>Top Scores</h2>
-  {% if top_users %}
-    <ol>
-      {% for user in top_users %}
-        <li>{{ user.username }} - {{ user.high_score }} pts</li>
-      {% endfor %}
-    </ol>
-  {% else %}
-    <p>No users have scores yet.</p>
-  {% endif %}
+  <h2>Settings</h2>
+  <label><input type="checkbox"> Enable Music</label><br>
+  <label><input type="checkbox"> High Contrast Mode</label><br>
+  <label>Difficulty:
+    <select>
+      <option>Easy</option>
+      <option>Medium</option>
+      <option>Hard</option>
+    </select>
+  </label>
   <div class="back-button">
     <a href="{% url 'home-page' %}"><button>⬅ Back</button></a>
   </div>
