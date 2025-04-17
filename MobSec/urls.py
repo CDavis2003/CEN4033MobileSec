@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('core.urls')), 
     path('accounts/', include('accounts.urls')),
     path('questions/', include(('questions.urls', 'questions'), namespace='questions')),
+    path('core/', include(('core.urls')))
 ]
 
 
