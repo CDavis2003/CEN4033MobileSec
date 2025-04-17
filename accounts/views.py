@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .models import * 
 from core.utils import generate_rsa_keypair
 from .forms import *
@@ -33,3 +33,7 @@ def login_page(request):
     else:
         form = LoginForm()
     return render(request, 'accounts/login.html', {'form': form})
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login-page')
