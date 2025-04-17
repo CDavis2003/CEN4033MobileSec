@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <meta charset="UTF-8">
+  <title>Login | Mobile Security Game</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+  <div class="login-container">
+    <h1>Login</h1>
+    <form action="#" method="post">
+      <input type="text" name="username" placeholder="Username" required><br>
+      <input type="password" name="password" placeholder="Password" required><br>
+      <button type="submit">Sign In</button>
+    </form>
+    <p><a href="#">Forgot Password?</a></p>
+    <p>Don't have an account? <a href="{% url 'register-page' %}">Sign Up</a></p>
+  </div>
 </body>
 </html>
