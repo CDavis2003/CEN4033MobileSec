@@ -21,5 +21,6 @@ from accounts import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
+    path('questions/', include(('questions.urls', 'questions'), namespace='questions')),
     path('', views.login_page, name='home'), 
 ]
