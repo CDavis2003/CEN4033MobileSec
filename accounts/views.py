@@ -19,14 +19,15 @@ def register_page(request):
 
 def login_page(request):
     if request.method == "POST":
-        form = LoginForm(request.POST)
+        form = LoginForm(request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
             user = authenticate(request, username=username, password=password)
             if user:
+                print("✅ Login successful!")
                 login(request, user)
-                return render(request, 'accounts/success.html', {'user': user})
+                return redirect('home-page')
             else:
                 form.add_error(None, "Invalid credentials")
     else:
