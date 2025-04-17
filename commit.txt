@@ -1,1 +1,1 @@
-used djangoadmin startapp to create some of the file structure for some app modules, attempted some html with css unsucessfully.
+Created questions module that allows questions (true/false) to be added to database
