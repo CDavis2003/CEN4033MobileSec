@@ -1,4 +1,6 @@
 {% load static %}
+{% csrf_token %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +12,7 @@
 <body>
 <nav>🏠 Home</nav>
 <div class="card">
-  <h2>Welcome to the Game</h2>
+  <h2>👋 Welcome to the Game, {{ user.username }}!</h2>
   <div class="options">
     <a href="play.html"><button>🎮 Play Game</button></a>
     <a href="leaderboard.html"><button>🏆 Leaderboard</button></a>
