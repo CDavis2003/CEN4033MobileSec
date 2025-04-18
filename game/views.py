@@ -1,29 +1,37 @@
 from django.shortcuts import render, redirect
 from .models import Game
 from questions.models import Question
-import random
-
+from .utils import pick_random_question, calculate_score
+from random import choice
 
 def play_game(request):
     if request.method == 'POST':
         question_id = request.POST.get('question_id')
-        user_answer = request.POST.get('answer') == 'True'
+        selected_answer = request.POST.get('answer') == 'True'
         question = Question.objects.get(id=question_id)
-        is_correct = (user_answer == question.correct_answer)
 
-        game = Game.objects.create(
+        is_correct = question.correct_answer == selected_answer
+        score = calculate_score([{'correct': is_correct}])
+
+        Game.objects.create(
             user=request.user,
             question=question,
             is_correct=is_correct,
-            score=10 if is_correct else 0
+            score=score
         )
-        return redirect('game-result', game_id=game.id)
+        next_question = pick_random_question()
+        return render(request, 'play.html', {
+            'question': next_question,
+            'last_result': is_correct
+        })
+    else:
+    # GET request: show a random question
+        question = pick_random_question()
+        return render(request, 'play.html', {
+            'question': question,
+            'last_result': None  # no result on first GET
+        })
 
-    # GET - serve a random question
-    question = random.choice(Question.objects.all())
-    return render(request, 'game/play.html', {'question': question})
-
-
-def game_result(request, game_id):
-    game = Game.objects.get(id=game_id)
-    return render(request, 'game/result.html', {'game': game})
+# def game_result(request, game_id):
+#     game = Game.objects.get(id=game_id)
+#     return render(request, 'result.html', {'game': game})

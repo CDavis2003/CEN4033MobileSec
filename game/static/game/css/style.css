@@ -1,0 +1,77 @@
+:root {
+  --primary: #1E3A8A;
+  --accent: #10B981;
+  --error: #EF4444;
+  --bg: #f0f4f8;
+  --text: #111827;
+  --card: #ffffff;
+  --border: #d1d5db;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+nav {
+  background: var(--primary);
+  color: white;
+  width: 100%;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+.card {
+  background: var(--card);
+  padding: 30px;
+  margin-top: 60px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px var(--shadow);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+input {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 16px;
+}
+button {
+  background: var(--primary);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+button:hover {
+  background: #3748a4;
+}
+.extra-links, .back-button, .new-user {
+  text-align: center;
+  margin-top: 15px;
+}
+.new-user button {
+  background: var(--accent);
+}
+.back-button button {
+  background: var(--border);
+  color: var(--text);
+}
+.back-button button:hover {
+  background-color: #cbd5e1;
+}

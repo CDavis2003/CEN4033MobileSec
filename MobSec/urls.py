@@ -24,7 +24,8 @@ urlpatterns = [
     path('', include(('core.urls', 'core'), namespace='core')),
     path('accounts/', include(('accounts.urls', 'accounts'), namespace='accounts')),
     path('questions/', include(('questions.urls', 'questions'), namespace='questions')),
-    path('core/', include(('core.urls')))
+    path('core/', include(('core.urls'))),
+    path('game/', include(('game.urls', 'game'), namespace='game')),
 ]
 
 
