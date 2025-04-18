@@ -21,8 +21,8 @@ from accounts.views import *
 from questions.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('core.urls')), 
-    path('accounts/', include('accounts.urls')),
+    path('', include(('core.urls', 'core'), namespace='core')),
+    path('accounts/', include(('accounts.urls', 'accounts'), namespace='accounts')),
     path('questions/', include(('questions.urls', 'questions'), namespace='questions')),
     path('core/', include(('core.urls')))
 ]

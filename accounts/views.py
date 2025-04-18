@@ -1,3 +1,5 @@
+from time import sleep
+
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .models import * 
@@ -15,7 +17,7 @@ def register_page(request):
             return redirect('login-page')
     else:
         form = RegisterForm()
-    return render(request, 'accounts/register.html', {'form': form})
+    return render(request, 'register.html', {'form': form})
 
 def login_page(request):
     if request.method == "POST":
@@ -32,8 +34,10 @@ def login_page(request):
                 form.add_error(None, "Invalid credentials")
     else:
         form = LoginForm()
-    return render(request, 'accounts/login.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
 def logoutUser(request):
     logout(request)
-    return redirect('login-page')
+    render(request, 'logout.html')
+    sleep(3)
+    return redirect('accounts:login-page')

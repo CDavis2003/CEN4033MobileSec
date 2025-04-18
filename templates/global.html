@@ -1,7 +1,9 @@
 <!--Template or layout for every page of our game-->
-<!DOCTYPE html>
 {% csrf_token %}
 {% load static %}
+
+<!DOCTYPE html>
+
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -13,6 +15,12 @@
     <body>
         <header class="title-bar">
             <div class="logo">Mobile Security</div>
+            <nav class="nav-links">
+                <a href="{% url 'core:home-page' %}">Home</a>
+                <a href="{% url 'core:home-page' %}">Play</a>
+                <a href="{% url 'core:leaderboard-page' %}">Leaderboard</a>
+                <a href="{% url 'accounts:login-page' %}">Login</a>
+            </nav>
             
         </header>
 

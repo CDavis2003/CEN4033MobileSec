@@ -1,13 +1,13 @@
+{% extends 'global.html' %}
 {% load static %}
 {% csrf_token %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Settings | Security Awareness Game</title>
+
+  {% block extra_css %}
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'homepage/css/style.css' %}">
-</head>
+  {% endblock %}
+
+{% block content %}
 <body>
 <nav>⚙️ Settings</nav>
 <div class="card">
@@ -22,8 +22,9 @@
     </select>
   </label>
   <div class="back-button">
-    <a href="{% url 'home-page' %}"><button>⬅ Back</button></a>
+    <a href="{% url 'core:home-page' %}"><button>⬅ Back</button></a>
   </div>
 </div>
 </body>
-</html>
+{% endblock %}
+

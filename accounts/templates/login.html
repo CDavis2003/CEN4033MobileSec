@@ -1,6 +1,7 @@
+{% extends 'global.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
+
+{% block content %}
 <head>
   <meta charset="UTF-8">
   <title>Login | Security Awareness Game</title>
@@ -21,11 +22,12 @@
     <a href="#">Forgot Password?</a>
   </div>
   <div class="new-user">
-    <a href="{% url 'register-page' %}"><button type="button">➕ New User</button></a>
+    <a href="{% url 'accounts:register-page' %}"><button type="button">➕ New User</button></a>
   </div>
 </div>
 <div class="back-button">
-  <a href="{% url 'home-page' %}"><button>⬅ Back</button></a>
+  <a href="{% url 'core:home-page' %}"><button>⬅ Back</button></a>
 </div>
 </body>
+{% endblock %}
 </html>

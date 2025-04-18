@@ -1,1 +1,1 @@
-Created questions module that allows questions (true/false) to be added to database
+Adding admin to questions module in admin.py

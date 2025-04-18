@@ -8,13 +8,13 @@ from game.models import *
 User = get_user_model()
 
 def home_page(request):
-    return render(request, 'core/home.html')
+    return render(request, 'home.html')
 
-@login_required(login_url='login-page')
+@login_required(login_url='accounts:login-page')
 def leaderboard_page(request):
     top_users = User.objects.order_by('-high_score')[:10]
-    return render(request, 'core/leaderboard.html', {'top_users': top_users})
+    return render(request, 'leaderboard.html', {'top_users': top_users})
 
 
 def settings_page(request):
-    return render(request, "core/settings.html")
+    return render(request, "settings.html")

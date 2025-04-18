@@ -14,11 +14,11 @@
 <div class="card">
   <h2>👋 Welcome to the Game {{ request.user.username|default:""}}</h2>
   <div class="options">
-    <a href="{% url 'login-page' %}"><button>🎮 Play Game</button></a>
-    <a href="{% url 'leaderboard-page' %}"><button>🏆 Leaderboard</button></a>
-    <a href="{% url 'settings-page' %}"><button>⚙️ Settings</button></a>
-    <a href="{% url 'login-page' %}"><button> Login</button></a>
-    <a href="{% url 'logout-page' %}"><button> Logout</button></a>
+    <a href="{% url 'accounts:login-page' %}"><button>🎮 Play Game</button></a>
+    <a href="{% url 'core:leaderboard-page' %}"><button>🏆 Leaderboard</button></a>
+    <a href="{% url 'core:settings-page' %}"><button>⚙️ Settings</button></a>
+    <a href="{% url 'accounts:login-page' %}"><button> Login</button></a>
+    <a href="{% url 'accounts:logout-page' %}"><button> Logout</button></a>
   </div>
 
 </div>
