@@ -1,1 +1,1 @@
-Adding admin to questions module in admin.py
+added nav bar and extended globabl with current used pages. Fixed namespaces and template structure.
