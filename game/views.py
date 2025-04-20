@@ -3,9 +3,9 @@ from .models import Game
 from questions.models import Question
 from .utils import pick_random_question, calculate_score
 from random import choice
-from guest_user.decorators import allow_guest_user
+# from guest_user.decorators import allow_guest_user
 
-@allow_guest_user
+# @allow_guest_user
 def play_game(request):
     if request.method == 'POST':
         question_id = request.POST.get('question_id')

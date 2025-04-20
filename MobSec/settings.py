@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'guest_user',
+    # 'guest_user',
 ]
 
 MIDDLEWARE = [
@@ -51,13 +51,14 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    # 'guest_user.middleware.GuestUserMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-AUTHENTICATION_BACKENDS = [
-    'guest_user.backends.GuestBackend'
-]
+# AUTHENTICATION_BACKENDS = [
+#     'guest_user.backends.GuestBackend'
+# ]
 
 ROOT_URLCONF = 'MobSec.urls'
 
