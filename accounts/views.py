@@ -14,7 +14,7 @@ def register_page(request):
             user = form.save()
             public, private = generate_rsa_keypair()
             Credential.objects.create(user=user, public_key=public, private_key=private)
-            return redirect('login-page')
+            return redirect('accounts:login-page')
     else:
         form = RegisterForm()
     return render(request, 'register.html', {'form': form})
