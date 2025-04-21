@@ -14,6 +14,7 @@ class Game(models.Model):
     
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
+        leaderboard, created = Leaderboard.objects.get_or_create(user=self.user)
         if self.score > self.user.high_score:
             self.user.high_score = self.score
             self.user.save()

@@ -1,0 +1,17 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Game | Security Awareness Game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'game/css/style.css' %}">
+</head>
+
+<h2>Game Over!</h2>
+<p>Your final score: {{ final_score }} points</p>
+<a href="{% url 'game:play-page' %}">Play Again</a>
+<div class="back-button">
+    <a href="{% url 'core:home-page' %}"><button>⬅ Back</button></a>
+  </div>
