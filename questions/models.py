@@ -5,6 +5,7 @@ from django.db import models
 class Question(models.Model):
     question_text = models.CharField(max_length=255)
     correct_answer = models.BooleanField()
+    feedback_text = models.TextField(blank=True)  # Optional explanation for incorrect answers
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

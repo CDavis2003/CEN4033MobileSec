@@ -30,11 +30,12 @@ def play_game(request):
         question = Question.objects.get(id=question_id)
 
         is_correct = str(question.correct_answer).lower() == selected_answer.lower()
+        is_correct = str(question.correct_answer).lower() == selected_answer.lower()
         if is_correct:
             request.session["score"] += 10
             feedback = "Correct!"
         else:
-            feedback = "Incorrect."
+            feedback = f"Incorrect. {question.feedback_text}"
 
         Game.objects.create(user=user, question=question, is_correct=is_correct, score=request.session["score"])
         request.session["answered_questions"].append(question.id)
