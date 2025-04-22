@@ -1,13 +1,14 @@
+{% extends 'global.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Game | Security Awareness Game</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+{% block extra_css %}
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'game/css/style.css' %}">
-</head>
+
+{% endblock %}
+
+{% block content %}
 <body>
   <div class="container">
     <h1>Cybersecurity Game</h1>
@@ -31,4 +32,4 @@
     <p>Current Score: <strong>{{ score }}</strong></p>
   </div>
 </body>
-</html>
+{% endblock %}

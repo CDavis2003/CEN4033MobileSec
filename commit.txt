@@ -1,1 +1,1 @@
-added nav bar and extended globabl with current used pages. Fixed namespaces and template structure.
+added all questions to db with answers and explanaation, added a source.txt file for materials used for question creation.
