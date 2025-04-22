@@ -1,6 +1,6 @@
 # CEN4033MobileSec
 
-This project is a Django-based backend for a mobile security game, focusing on educating users about mobile security through interactive game elements and various security challenges.
+This project is a Django-based backend for a mobile security awareness website game, focusing on educating users about mobile security through interactive game elements and various security challenges in a quiz format.
 
 ## Features
 - User authentication
