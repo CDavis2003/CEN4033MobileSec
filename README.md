@@ -1,22 +1,43 @@
-    #EN4033MobileSec
+# CEN4033MobileSec
 
 This project is a Django-based backend for a mobile security game, focusing on educating users about mobile security through interactive game elements and various security challenges.
-Features
 
-    User authentication
+## Features
+- User authentication
+- Game logic and progress tracking
+- Security-related questions and challenges
+- Integration with a web UI for a seamless experience
 
-    Game logic and progress tracking
+## Technologies Used
+- Python
+- Django
+- HTML/CSS
+- SQLite (for local database)
 
-    Security-related questions and challenges
+## Setup
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/CDavis2003/CEN4033MobileSec.git
+    ```
 
-    Integration with a web UI for a seamless experience
+2. Navigate to the project directory:
+    ```bash
+    cd CEN4033MobileSec
+    ```
 
-    ##Technologies Used
+3. Install the required dependencies:
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-    Python
+4. Apply migrations:
+    ```bash
+    python manage.py migrate
+    ```
 
-    Django
+5. Run the development server:
+    ```bash
+    python manage.py runserver
+    ```
 
-    HTML/CSS
-
-    SQLite (for local database)
+Visit `http://127.0.0.1:8000/` to start using the app.
