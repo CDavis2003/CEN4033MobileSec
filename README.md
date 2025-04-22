@@ -1,4 +1,4 @@
-#EN4033MobileSec
+    #EN4033MobileSec
 
 This project is a Django-based backend for a mobile security game, focusing on educating users about mobile security through interactive game elements and various security challenges.
 Features
@@ -11,7 +11,7 @@ Features
 
     Integration with a web UI for a seamless experience
 
-##Technologies Used
+    ##Technologies Used
 
     Python
 
